@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appian</title>
+    <style>
+        body{
+            background-image: url('image copy 4.png');   /* Replace with your image path */
+            background-size: cover;                    /* Scales image to cover full screen */
+            background-repeat: no-repeat;              /* Prevents tiling */
+            background-position: center center;        /* Centers the image */
+            height: 100vh;                              /* Ensures body covers full viewport */
+            margin: 0;                                  /* Removes default margin */
+
+        }
+        #main_head{
+            color: rgb(249, 212, 157);
+            text-align: center;
+            font-size: 75px;
+            font-family: cursive;
+            background-color: rgb(0, 0, 0);
+            width: 15cm;
+        }
+        #image{
+            height: 3cm;
+            display: :flex;
+            margin-left: 25px;
+            margin-top: 25px;
+            border-radius: 1.25cm;
+        }
+        #form{
+            color: rgb(253, 207, 147);
+            background: linear-gradient(rgb(0, 0, 0),rgb(110, 109, 109));
+            width: 10cm;
+            height: 7cm;
+            font-size: 20px;
+            font-family: cursive;
+            
+            padding: 10px;
+            border: 10px;
+            border-color: aliceblue;
+        }
+        input{
+            width: 7.5cm;
+            padding: 10px;
+            margin-left: 2cm;
+            cursor: pointer;
+        }
+        .forms{
+            padding: 10px;
+            border-radius: 50px;
+            margin-left: 2cm;
+
+        }
+        #Second_head{
+            color: aliceblue;
+            font-size: 0.5cm;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #sub{
+            background: #f8b287;
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 1cm;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.5cm;
+            border-radius: 2cm;
+        }
+        
+
+    </style>
+</head>
+<body id="bod">
+   <h1 id="main_head">SmartStack</h1>
+   <div id="user_input">
+    <form action="gendu.php" id="form" class="forms">
+        <h1 id="Second_head">Add Image You are searching for</h1>
+        <div>
+          what are you looking for:  <input type="text"  placeholder="Search...">
+        </div>
+        <div>
+            Add Image :<input type="file"required>
+        </div>
+        <div>
+            <input type="submit" id="sub"></input>
+        </div>
+    </form>
+
+   </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
