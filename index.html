@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appian</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <style>
         body{
             background-image: url('image copy 4.png');   /* Replace with your image path */
@@ -24,7 +28,7 @@
         }
         #image{
             height: 3cm;
-            display: :flex;
+            display:flex;
             margin-left: 25px;
             margin-top: 25px;
             border-radius: 1.25cm;
@@ -32,8 +36,8 @@
         #form{
             color: rgb(253, 207, 147);
             background: linear-gradient(rgb(0, 0, 0),rgb(110, 109, 109));
-            width: 10cm;
-            height: 7cm;
+            width: 15cm;
+            height: 15cm;
             font-size: 20px;
             font-family: cursive;
             
@@ -68,28 +72,63 @@
             font-size: 0.5cm;
             border-radius: 2cm;
         }
+        select{
+            height: 1cm;
+            width: 3cm;
+        }
+        .inp{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
         
 
     </style>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body id="bod">
+    
+   <button id="chatbox">AI Assistant</button>
    <h1 id="main_head">SmartStack</h1>
    <div id="user_input">
-    <form action="gendu.php" id="form" class="forms">
-        <h1 id="Second_head">Add Image You are searching for</h1>
-        <div>
-          what are you looking for:  <input type="text"  placeholder="Search...">
+    <form action="/upload" method="post" id="form" class="forms" enctype="multipart/form-data">
+        <h1 id="Second_head">We are here for hepl you....</h1>
+        <div class="inp">
+          <label for="Category">Selsect the Category :</label> 
+          <select id="category" name="category">
+            <option value="Electronics">Electronics</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Beauty">Beauty Products</option>
+            <option value="Health & Wellness">Health & Wellness</option>
+            <option value="Groceries & Food">Groceries & Food</option>
+            <option value="Toys & Baby Products">Toys & Baby Products</option>
+            <option value="Books & Stationery">Books & Stationery</option>
+            <option value="Pet Supplies">Pet Supplies</option>
+            <option value="Digital Products">Digital Products</option>
+
+
+          </select>
         </div>
-        <div>
-            Add Image :<input type="file"required>
+        <div class="inp">
+            <label for="des">Features you want:</label><input type="text" name="description"placeholder="Add Description">
         </div>
-        <div>
+        <div class="inp">
+            <label>Min Price: Rs.<span id="minVal">5000</span></label><br>
+            <input type="range" name="minRange" id="minRange" min="100" max="100000" step="50" value="5000"><br>
+
+            <label>Max Price: Rs.<span id="maxVal">10000</span></label><br>
+            <input type="range" name="maxRange" id="maxRange" min="100" max="100000" step="50" value="10000"><br>
+        </div>
+        <div class="inp">
+            <label for="image">Image:</label><input name="image_data" type="file" id="image">
+        </div>
+        
+        <div class="feature"> 
             <input type="submit" id="sub"></input>
         </div>
     </form>
 
    </div>
     </div>
-    <script src="index.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
